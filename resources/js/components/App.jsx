@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Login from "./Login/Login";
 
 function App() {
 	return (
-		<div>
-			Hello World
-		</div>
+		<React.Fragment>
+			<Login/>
+		</React.Fragment>
 	);
 }
 
