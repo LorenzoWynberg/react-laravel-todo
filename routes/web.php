@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +14,9 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
+    return redirect('/app/dashboard');
+});
+
+Route::get('/app/{path?}', function () {
     return view('app');
 });

@@ -7,19 +7,28 @@ import {
 	CssBaseline,
 	Typography
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import user from "../../Models/user";
 
-function Login() {
+function Login () {
+	
+	const navigate=useNavigate()
+
 	const handleSubmit = (event) => {
+
 		event.preventDefault()
 		const formData = new FormData(event.currentTarget);
 
 		const loginCredentials = {
 			email: formData.get('email'),
 			password: formData.get('password')
-		}
+		} 
 
 		window.axios.post('/api/login', loginCredentials).then((response) => {
-			console.log('Logged successfully!')
+			user.store(response.data)
+			if(user.isLoggedIn()){
+				navigate('/app/dashboard')
+			}
 		})
 	}
 
@@ -71,4 +80,4 @@ function Login() {
 	)
 }
 
-export default Login
+export default Login;
