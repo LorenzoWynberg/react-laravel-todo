@@ -5,24 +5,19 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import user from "../Models/user";
 import Login from "./Login/Login";
 import Dashboard from "./Dashboard/Dashboard";
-import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
-import user from "../Models/user";
+import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path={'/app/login'} element={<Login />}/>
-				<Route
-          path="/app/dashboard"
-          element={
-            <ProtectedRoute user={user}>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+				<Route element={<ProtectedRoutes user={user}/>}>
+					<Route path={'/app/dashboard'} element={<Dashboard />}/>
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);
