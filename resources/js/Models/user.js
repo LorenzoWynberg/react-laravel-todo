@@ -25,7 +25,7 @@ class User {
 
 	/**
 	 *
-	 * @return {boolean}
+	 * @return boolean
 	 */
 	isLoggedIn() {
 		return Boolean(this.loggedIn) === true

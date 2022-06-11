@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
+	BrowserRouter,
+	Routes,
+	Route,
 } from "react-router-dom";
 import user from "../Models/user";
 import Login from "./Login/Login";
@@ -14,9 +14,9 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path={'/app/login'} element={<Login />}/>
-				<Route element={<ProtectedRoutes user={user}/>}>
-					<Route path={'/app/dashboard'} element={<Dashboard />}/>
+				<Route path={'/app/login'} element={<Login />} />
+				<Route element={<ProtectedRoutes user={user} />}>
+					<Route path={'/app/dashboard'} element={<Dashboard />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

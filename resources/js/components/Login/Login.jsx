@@ -10,9 +10,9 @@ import {
 import { useNavigate } from "react-router-dom";
 import user from "../../Models/user";
 
-function Login () {
-	
-	const navigate=useNavigate()
+function Login() {
+
+	const navigate = useNavigate()
 
 	const handleSubmit = (event) => {
 
@@ -22,11 +22,11 @@ function Login () {
 		const loginCredentials = {
 			email: formData.get('email'),
 			password: formData.get('password')
-		} 
+		}
 
 		window.axios.post('/api/login', loginCredentials).then((response) => {
 			user.store(response.data)
-			if(user.isLoggedIn()){
+			if (user.isLoggedIn()) {
 				navigate('/app/dashboard')
 			}
 		})
