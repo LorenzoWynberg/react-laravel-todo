@@ -12,14 +12,16 @@ import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path={'/app/login'} element={<Login />} />
-				<Route element={<ProtectedRoutes user={user} />}>
-					<Route path={'/app/dashboard'} element={<Dashboard />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
+		<React.StrictMode>
+			<BrowserRouter>
+				<Routes>
+					<Route path={'/app/login'} element={<Login />} />
+					<Route element={<ProtectedRoutes user={user} />}>
+						<Route path={'/app/dashboard'} element={<Dashboard />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</React.StrictMode>
 	);
 }
 
