@@ -5,8 +5,8 @@ import {
 	Route,
 } from "react-router-dom";
 import user from "@models/User";
-import Login from "@views/Login/Login";
-import Dashboard from "@views/Dashboard/Dashboard";
+import Login from "@pages/Login/Login";
+import Dashboard from "@pages/Dashboard/Dashboard";
 import ProtectedRoutes from "@routes/ProtectedRoutes/ProtectedRoutes";
 
 function Main() {

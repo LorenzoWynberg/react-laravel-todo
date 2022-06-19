@@ -9,7 +9,7 @@ module.exports = {
             '@routes': path.resolve(__dirname, 'resources/js/routes'),
             '@models': path.resolve(__dirname, 'resources/js/models'),
             '@layouts': path.resolve(__dirname, 'resources/js/layouts'),
-            '@views': path.resolve(__dirname, 'resources/js/views'),
+            '@pages': path.resolve(__dirname, 'resources/js/pages'),
             '@components': path.resolve(__dirname, 'resources/js/components'),
         }
     }
